@@ -57,4 +57,11 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    // HTTP通信を行うライブラリ
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    // RetrofitとMoshiを繋ぐライブラリ
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    // JSONのデータをKotlinオブジェクトに変換を行うライブラリ
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+
 }
