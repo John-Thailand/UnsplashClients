@@ -1,5 +1,6 @@
 package com.example.unsplashclients.data.repository
 
+import com.example.unsplashclients.data.remote.PhotoDetailDto
 import com.example.unsplashclients.data.remote.SearchPhotosResultDto
 import com.example.unsplashclients.data.remote.UnsplashApi
 import com.example.unsplashclients.domain.repository.PhotoRepository
@@ -14,5 +15,9 @@ class PhotoRepositoryImpl @Inject constructor(
 ) : PhotoRepository {
     override suspend fun searchPhotos(query: String): SearchPhotosResultDto {
         return api.searchPhotos(query)
+    }
+
+    override suspend fun getPhotoById(photoId: String): PhotoDetailDto {
+        return api.getPhotoById(photoId)
     }
 }
