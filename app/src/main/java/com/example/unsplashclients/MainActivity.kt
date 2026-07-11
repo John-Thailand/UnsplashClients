@@ -6,12 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.unsplashclients.presentation.ScreenRoute
+import com.example.unsplashclients.presentation.search_photos.SearchPhotosScreen
 import com.example.unsplashclients.presentation.ui.theme.UnsplashClientsTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,8 +30,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         // 画像検索画面
                         composable(route = ScreenRoute.SearchPhotosScreen.route) {
-                            // TODO
-                            Text(text = "画像検索画面")
+                            SearchPhotosScreen()
                         }
                         // 画像詳細画面
                         composable(route = ScreenRoute.PhotoDetailScreen.route) {
