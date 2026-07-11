@@ -1,4 +1,4 @@
-package com.example.unsplashclients.ui.theme
+package com.example.unsplashclients.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
