@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.android.application)
     // org.jetbrains.kotlin.plugin.compose / Jetpack Composeをコンパイルできるようにするプラグイン
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -63,5 +65,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     // JSONのデータをKotlinオブジェクトに変換を行うライブラリ
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
-
+    // Hilt本体
+    implementation(libs.hilt.android)
+    // Hiltのコード生成
+    ksp(libs.hilt.compiler)
 }
