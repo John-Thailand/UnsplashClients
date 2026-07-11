@@ -1,0 +1,21 @@
+package com.example.unsplashclients.data.remote
+
+
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class UserX(
+    val bio: String?,
+    val id: String?,
+    val links: LinksXXX?,
+    val location: String?,
+    val name: String?,
+    @Json(name = "portfolio_url")
+    val portfolioUrl: String?,
+    @Json(name = "total_collections")
+    val totalCollections: Int?,
+    @Json(name = "updated_at")
+    val updatedAt: String?,
+    val username: String?
+)
