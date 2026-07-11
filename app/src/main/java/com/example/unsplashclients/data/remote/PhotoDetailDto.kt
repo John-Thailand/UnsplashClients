@@ -1,6 +1,7 @@
 package com.example.unsplashclients.data.remote
 
 
+import com.example.unsplashclients.domain.model.PhotoDetail
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -29,3 +30,15 @@ data class PhotoDetailDto(
     val user: UserX?,
     val width: Int?
 )
+
+fun PhotoDetailDto.toPhotoDetail(): PhotoDetail {
+    return PhotoDetail(
+        description = description,
+        likes = 100,
+        imageUrl = urls!!.raw!!,
+        photographer = user?.name,
+        camera = exif?.name,
+        location = "${location?.city}, ${location?.country}",
+        downloads = downloads,
+    )
+}
