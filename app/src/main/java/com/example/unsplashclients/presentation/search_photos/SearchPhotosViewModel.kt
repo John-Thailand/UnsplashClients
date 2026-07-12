@@ -1,7 +1,9 @@
 package com.example.unsplashclients.presentation.search_photos
 
 import androidx.compose.runtime.State
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.unsplashclients.common.NetworkResponse
@@ -18,11 +20,13 @@ class SearchPhotosViewModel @Inject constructor(
     private val _state = mutableStateOf(SearchPhotosState())
     val state: State<SearchPhotosState> = _state
 
+    var query by mutableStateOf("programming")
+
     init {
-        searchPhotos("programing")
+        searchPhotos()
     }
 
-    fun searchPhotos(query: String) {
+    fun searchPhotos() {
         // onEachとは
         // Flowから値が流れてくるたびに処理を実行するための関数
         searchPhotosUseCase(query).onEach { result ->
