@@ -13,7 +13,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.unsplashclients.presentation.ScreenRoute
 import com.example.unsplashclients.presentation.search_photos.SearchPhotosScreen
 import com.example.unsplashclients.presentation.ui.theme.UnsplashClientsTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
