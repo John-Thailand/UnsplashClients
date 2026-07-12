@@ -73,4 +73,8 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.9.8")
     implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
+    // Icon
+    implementation(libs.androidx.compose.material.icons.extended)
+    // 画像の表示
+    implementation("io.coil-kt:coil-compose:2.2.2")
 }
