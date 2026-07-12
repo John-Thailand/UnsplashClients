@@ -31,7 +31,7 @@ fun PhotoThumbnail(
 ) {
     Box(modifier = Modifier
         .background(Color.Black)
-        .heightIn((min = 200.dp))
+        .heightIn(min = 200.dp)
         .clickable { onClick(photo) },
         contentAlignment = Alignment.BottomCenter,
     ) {
