@@ -13,11 +13,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.navigation.NavController
+import com.example.unsplashclients.presentation.ScreenRoute
 import com.example.unsplashclients.presentation.search_photos.components.PhotoThumbnail
 import com.example.unsplashclients.presentation.search_photos.components.SearchBar
 
 @Composable
 fun SearchPhotosScreen(
+    navController: NavController,
     viewModel: SearchPhotosViewModel = hiltViewModel(),
 ) {
     val state = viewModel.state.value
@@ -48,7 +51,12 @@ fun SearchPhotosScreen(
                         items(state.photos) { photo ->
                             PhotoThumbnail(
                                 photo = photo,
-                                onClick = {}
+                                onClick = {
+                                    navController.navigate(
+                                        ScreenRoute.PhotoDetailScreen.route + "/${photo.photoId}",
+
+                                    )
+                                }
                             )
                         }
                     }
