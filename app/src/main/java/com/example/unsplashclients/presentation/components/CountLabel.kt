@@ -17,6 +17,7 @@ fun CountLabel(
     imageVector: ImageVector,
     count: Int,
     iconTint: Color,
+    color: Color,
     modifier: Modifier = Modifier,
 ) {
     Row(modifier = modifier) {
@@ -28,7 +29,7 @@ fun CountLabel(
         Spacer(modifier = Modifier.width(5.dp))
         Text(
             text = count.toString(),
-            color = Color.White,
+            color = color,
             style = MaterialTheme.typography.bodyLarge,
         )
     }
